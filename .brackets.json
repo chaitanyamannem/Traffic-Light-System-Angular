@@ -1,5 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/chaitanya/Traffic-Light-System-Angular/libs/underscore.js"
+        "/Users/chaitanya/Traffic-Light-System-Angular/libs/underscore.js",
+        "/Users/chaitanya/Traffic-Light-System-Angular/libs/taghandler.js",
+        "/Users/chaitanya/Traffic-Light-System-Angular/libs/taggle.js"
     ]
 }
