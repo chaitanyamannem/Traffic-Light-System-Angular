@@ -25,15 +25,15 @@ angular.module('trafficLightSystem').component('home', {
 
 
         this.startRedLight = function () {
-            this.message = "red";
+            lightData.message = "red";
         };
 
         this.startYellowLight = function () {
-            this.message = "yellow";
+            lightData.message = "yellow";
         };
 
         this.startGreenLight = function () {
-            this.message = "green";
+            lightData.message = "green";
         };
     }
 })
