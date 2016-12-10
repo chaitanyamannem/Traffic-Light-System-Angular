@@ -1,39 +1,47 @@
 angular.module('trafficLightSystem').component('home', {
-    templateUrl: '/home/home.html',
-    controller: function ($interval, automate) {
-
-        console.log("In Controller");
-
-        $interval(automatedLights, 1000);
-
-        console.log("crossed interval");
-
+    templateUrl: '/home/home.html'
+    , controller: function ($interval, automate) {
+             
         var lightData = {
-            message: 'Intiating the Traffic System'
+            message: 'Intiating the Traffic System',
+            red: 'on', 
+            yellow: 'off',
+            green: 'off'
         };
-
         //this helps in solving data binding issue
         this.data = lightData;
 
-
-        function automatedLights() {
-            console.log("in automatedLights");
-            console.log(lightData.message);
-            lightData.message = automate.automatedLights();
+       function startRedLight(showRed) {
+            lightData.red = automate.automatedLights(showRed);
         }
 
-
-
-        this.startRedLight = function () {
-            lightData.message = "red";
+        function startYellowLight(showOrange) {
+            lightData.yellow = automate.automatedLights(showOrange);
+        }
+        
+        function startGreenLight(showGreen) {
+            lightData.green = automate.automatedLights(showGreen);
         };
+         function stop() {
+            startRedLight("on");
+            startYellowLight("off");
+            startGreenLight("off");
+        }
 
-        this.startYellowLight = function () {
-            lightData.message = "yellow";
-        };
+        function getReady() {
+            startRedLight("off");
+            startYellowLight("on");
+            startGreenLight("off");
+        }
 
-        this.startGreenLight = function () {
-            lightData.message = "green";
-        };
+        function move() {
+            startRedLight("off");
+            startYellowLight("off");
+            startGreenLight("on");
+        }
+     
+        $interval(stop, 5000);
+        $interval(getReady, 7000);
+        $interval(move, 9000);
     }
-})
+});

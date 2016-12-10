@@ -1,4 +1,12 @@
-<h1>Automated Traffic Light System</h1>
-
-
-<h2>{{$ctrl.data.message}}</h2>
+<div class="wrapper">
+    <h1>Automated Traffic light system</h1>
+    
+    <div class="trafficLights">
+        <div class="innerArea">
+            <p class="lights red {{$ctrl.data.red}}"></p>
+            <p class="lights orange {{$ctrl.data.yellow}}"></p>
+            <p class="lights green {{$ctrl.data.green}}"></p>
+        </div>
+    </div>
+    
+</div>

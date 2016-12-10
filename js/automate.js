@@ -1,10 +1,6 @@
 angular.module('trafficLightSystem').service('automate', function () {
 
-    this.automatedLights = function () {
-
-        return "yellow";
-
+    this.automatedLights = function (color) {
+        return color;
     };
-
-
 });
