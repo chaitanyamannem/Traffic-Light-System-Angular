@@ -1,4 +1,4 @@
-var app = angular.module('trafficLightSystem', ['ui.bootstrap']);
+var app = angular.module('trafficLightSystem', ['ngRoute', 'ui.bootstrap']);
 
 app.run(function () {
 
