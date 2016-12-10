@@ -1,6 +1,6 @@
 angular.module('trafficLightSystem').component('home', {
     templateUrl: '/home/home.html',
-    controller: function ($interval) {
+    controller: function ($interval, automate) {
 
         console.log("In Controller");
 
@@ -19,7 +19,7 @@ angular.module('trafficLightSystem').component('home', {
         function automatedLights() {
             console.log("in automatedLights");
             console.log(lightData.message);
-            lightData.message = "red";
+            lightData.message = automate.automatedLights();
         }
 
 
